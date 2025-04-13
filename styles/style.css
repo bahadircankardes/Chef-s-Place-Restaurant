@@ -1,0 +1,774 @@
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+/* Değişkenleri Tanımlıyouz */
+:root{
+    --main-color: #e84242;
+    --black-color: #0e0e0e;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.4);
+
+
+}
+
+
+/* CSS Reset */
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s ease;
+
+}
+
+/* Base HTML Codes */
+html{
+    font-size: 62.5%; /* 1 rem = 16px'dir. Eğer 1 rem = 10px olması için*/
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+/*! Scrool Bar Start */
+html::-webkit-scrollbar{
+    width: 0.8rem;
+    background-color: #fff;
+}
+
+html::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    border-radius: 3rem;
+    background-color: var(--black-color);
+}
+/*! Scrool Bar End */
+
+body{
+    background-color: var(--main-color);
+    /* height: 200vh; */
+    /* scroll çıkması için vermiştik */
+}
+section{
+    padding: 3.5rem 7%;
+}
+
+a{
+    color: var(--black-color);
+    text-decoration: none;
+}
+
+.btn{
+    background-color: var(--black-color);
+    color: white;
+    display: inline-block;
+    padding: 2rem 3.75rem;
+    font-size: 1.7rem;
+    border-radius: 30rem;
+    margin-top: 1rem;
+
+}
+
+.btn:hover{
+    opacity: 0.7;
+}
+
+.heading{
+    color: #fff;
+    font-size: 4rem;
+    text-transform: uppercase;
+    border-bottom: var(--border);
+    margin-bottom: 3.5rem;
+}
+
+.heading span{
+    color: var(--black-color);
+    text-transform: uppercase;
+}
+
+.box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.search input{
+    font-size: 1.6rem;
+    color: var(--black-color);
+    padding: 1rem;
+    text-transform: none;
+    border-radius: 3rem;
+}
+
+/*Header Section Start*/
+.header .search-form{
+    position: absolute;
+    top: 115%;
+    right: 7%;
+    background-color: #fff;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 3rem;
+    box-shadow: 0px 0px 25px 2px rgb(0 0 0 / 75%);
+    transform: scaleY(0);
+}
+.header .search-form{
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+    color: var(--black-color);
+}
+.header .search-form.active{
+    transform: scaleY(1);
+}
+
+.header .search-form input{
+    text-transform: none;
+    margin-left: 1rem;
+    padding-right: 1.5rem;
+    width: 100%;
+}
+
+.header .search-form i{
+    padding-right: 2rem;
+}
+
+.header .logo img{
+    height: 10rem;
+}
+
+.header{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    margin: 2rem 7%;
+    border-radius: 30rem;
+    box-shadow: 0px 0px 17px -2px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    color: var(--black-color);
+    border-bottom: 0.1rem solid transparent;
+}
+
+.header .navbar a.active,
+.header .navbar a:hover{
+    color: var(--main-color);
+    border-color: var(--main-color);
+    padding-bottom: 0.5rem;
+}
+
+.header .buttons button{
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    background-color: transparent;
+
+}
+
+.header .cart-items-container{
+    position: absolute;
+    top: 95%;
+    height: calc(100vh - 9rem);
+    width: 35rem;
+    background-color: #fff;
+    box-shadow: 0px 20px 14px 0px rgb(0 0 0 /75%);
+    right: -100%;
+}
+
+.header .cart-items-container.active{
+    right: 3rem;
+    
+}
+
+.header .cart-items-container .cart-item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.header .cart-items-container .cart-item:hover{
+    box-shadow: 0px 20px 14px 0px rgb(0 0 0 /75%);
+}
+
+.header .cart-items-container .cart-item .fa-solid{
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--black-color);
+
+}
+
+.header .cart-items-container .cart-item img{
+    height: 7rem;
+}
+
+.header .cart-items-container .cart-item  .content h3{
+    font-size: 2rem;
+    color: var(--black-color);
+    padding-bottom: 0.5rem;
+}
+
+.header .cart-items-container .cart-item  .content .price{
+    font-size: 1.5rem;
+    color: var(--black-color);
+}
+
+.header .cart-items-container .btn{
+    width: 100%;
+    text-align: center;
+    border-radius: unset;
+}
+
+
+.header #menu-btn{
+    display: none;
+}
+
+
+
+/*Header Section End*/
+
+/*!Home Section Start*/
+.home{
+    min-height: 100vh; 
+    /*Bir ekranın görüldüğü yer kadar 
+    alan kaplaması için*/
+    background: url(/images/home.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: -145px;
+    display: flex;
+    align-items: center;
+}
+
+.home .content{
+    max-width: 60rem;
+
+}
+
+.home .content h3{
+    font-size: 6rem;
+    text-transform: uppercase;
+    color: white;
+}
+
+.home .content p{
+    font-size: 2rem;
+    color: #fff;
+    line-height: 1.8;
+    font-weight: 300;
+    opacity: .8;
+    padding: 1rem;
+
+}
+/*!Home Section End*/
+
+/*!Menu Section Start*/
+
+/* .menu .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+
+        ---Kod tekrarı yapmamak için .box-container clasını verdiğimiz yapıları ortak stillendirme yaptık. O yüzden burayı yorum satırına aldık.---
+
+} */
+
+.menu .box-container .box{
+    background-color: white;
+    padding: 3rem;
+    border-radius: 3rem;
+    min-height: 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.menu .box-container .box img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.menu .box-container .box .menu-category{
+    font-size: 1.2rem;   
+    text-transform: lowercase;
+}
+
+.menu .box-container .box h3{
+    font-size: 3rem;
+    padding: 1rem 0;
+}
+
+.menu .box-container .box .price{
+    font-size: 2.5rem;
+    padding: 0.5rem 0;
+}
+
+.menu .box-container .box .price span{
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: 300;
+}
+/*!Menu Section End*/
+
+/*Our Products Start*/
+
+/* .products .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem,1fr));
+    gap: 1.5rem;
+
+        ---Kod tekrarı yapmamak için .box-container clasını verdiğimiz yapıları ortak stillendirme yaptık. O yüzden burayı yorum satırına aldık.---
+} */
+
+.products .box-container .box{
+    text-align: center;
+    background-color: #fff;
+    position:relative;
+    border-radius: 3rem;
+    height: 60rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem;
+}
+
+.products .box-container .box .box-head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.products .box-container .box .box-head .title{
+    font-size: 1.4rem;
+}
+
+.products .box-container .box .box-head .name{
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: start;
+    overflow-wrap: anywhere;
+
+
+}
+
+.products .box-container img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    border-radius: 3rem;
+}
+
+.products .box-container .dark-bg .box-head .name,
+.products .box-container .dark-bg .box-head .title{
+    color: #fff;
+}
+
+.products .box-container .dark-bg img{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: unset;
+}
+
+.products .box-container .box-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.products .box-container .box-bottom .info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.products .box-container .box-bottom .info .price{
+    font-size: 3rem;
+}
+
+.products .box-container .box-bottom .info .amount{
+    font-size: 1.4rem;    
+
+}
+
+.products .box-container .dark-bg .box-bottom .info .price,
+.products .box-container .dark-bg .box-bottom .info .amount{
+    color: #fff;
+}
+
+.products .box-container .box-bottom .product-btn a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 6.5rem;
+    height: 6.5rem;
+    border: 0.2rem solid var(--main-color);
+}
+
+.products .box-container .box-bottom .product-btn a i{
+    font-size: 1.6rem;
+    color: var(--main-color);
+}
+/*Our Products End */
+
+/*! About Us Section Start*/
+.about .row{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+}
+
+.about .row .image{
+    flex: 1 1 45rem;
+}
+
+.about .row img{
+    width: 100%;
+}
+
+.about .row .content{
+    flex: 1 1 45rem;
+}
+
+.about .row .content h3{
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+
+}
+
+.about .row .content p{
+    font-size: 1.6rem;
+    color: rgb(204, 204, 204);
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+/*! About Us Section End*/
+
+/*Customer's Reviews Start*/
+
+/* .review .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+
+    ---Kod tekrarı yapmamak için .box-container clasını verdiğimiz yapıları ortak stillendirme yaptık. O yüzden burayı yorum satırına aldık.---
+} */
+
+.review .box-container .box{
+    border: var(--border);
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: #fff;
+    border-radius: 3rem;
+}
+.review .box-container .box p{
+    font-size: 1.5rem;
+    line-height: 2.7rem;
+    padding: 2rem 0;
+}
+
+.review .box-container .box .user{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.review .box-container .box h3{
+    font-size: 2rem;
+    color: var(--main-color);
+    font-weight: 700;
+    padding: 1rem 0;
+}
+
+.review .box-container .box .stars i{
+    color: #FFD703;
+    font-size: 1.5rem;
+    line-height: 1rem;
+    font-weight: 900;
+}
+
+/*Customer's Reviews End*/
+
+/*!Contact Us Section Start*/
+.contact-us .row{
+    display: flex;   
+    background-color: var(--black-color); 
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.contact-us .row .map{
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.contact-us .row form{
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;   
+}
+.contact-us .row form .btn{
+    color: var(--main-color);
+    background-color: #fff;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.contact-us .row form h3{
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.contact-us .row form .input-box{
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+    border: var(--border);
+}
+.contact-us .row form .input-box i{
+    color: #fff;
+    font-size: 2rem;
+    padding-left: 2rem;
+}
+
+.contact-us .row form .input-box input{
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    background-color: transparent;
+    color:#fff;
+    text-transform: none;
+}
+
+
+/*!Contact Us Section End*/
+
+/*Blog Section Start*/
+.blogs .box-container .box{
+    background-color: #fff;
+    border-radius: 3rem;
+}
+
+.blogs .box-container .box .image{
+    height: 25rem;
+    width: 100%;
+    overflow: hidden;
+    border-top-right-radius: 3rem;
+    border-top-left-radius: 3rem;
+}
+
+.blogs .box-container .box .image img{
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.blogs .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+
+.blogs .box-container .box .box-content{
+    padding: 2rem;
+}
+
+.blogs .box-container .box .box-content a{
+    font-size: 2.5rem;
+}
+
+.blogs .box-container .box .box-content span{
+    display: block;
+    padding-top: 1rem;
+    font-size: 2rem;
+}
+
+.blogs .box-container .box .box-content p{
+    font-size: 1.3rem;
+    line-height: 2.3rem;
+    font-weight: 400;
+    color: rgb(204, 204, 204);
+    padding-top: 1rem;
+}
+
+.blogs .box-container .box .box-content .btn{
+    font-size: 1.7rem;
+}
+/*Blog Section End*/
+
+/*!Footer Section Start*/
+.footer{
+    background-color: var(--black-color);
+    text-align: center;
+}
+
+.footer .search{
+    display: flex;
+    justify-content: center;
+}
+
+.footer .search input{
+    width: 30rem;
+    padding-left: 2rem;
+}
+
+.footer .search .btn{
+    background: var(--main-color);
+    padding: 1rem 2rem;
+    margin-left: 1rem;
+}
+
+.footer .social-media{
+    padding: 2rem 0;
+}
+
+.footer .social-media i{
+    color: #fff;
+    font-size: 2rem;
+    width: 5rem;
+    height: 5rem;
+    line-height: 5rem;
+    border: var(--border);
+    border-radius: 50%;
+    margin: 0.3rem;
+}
+
+.footer .social-media i:hover{
+    background-color: var(--main-color);
+}
+/*!Footer Section End*/
+
+/*Links Start*/
+.footer .links{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer .links a{
+    color: #fff;
+    border: var(--border);
+    font-size: 2rem;
+    font-weight: 400;
+    padding: 0.7rem 2rem;
+    background-color: var(--main-color);
+}
+.footer .links a.active{
+    background-color: var(--black-color);
+}
+
+.footer .links a:hover{
+    background-color: var(--black-color);
+    opacity: 0.6;
+}
+
+.footer .created{
+    color: #fff;
+    font-weight: 300;
+    padding-top: 1.5rem;
+    font-size: 1.6rem;
+}
+.footer .created span{
+    color: var(--main-color);
+}
+
+
+
+/*Links End*/
+
+/*! Responsive Start*/
+@media (max-width: 1050px){
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 1.5rem 2rem;
+    }
+
+    .header .logo img{
+        height: 7rem;
+    }
+
+    section{
+        padding: 2rem;
+    }
+
+    .products .box-container .box .box-head .name{
+        font-size: 3.4rem;
+    }
+}
+
+@media (max-width: 780px){
+    .header #menu-btn{
+        display: inline-block;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top: 95%;
+        background-color: #fff;
+        height: calc(100vh-9rem);
+        width: 30rem;
+        box-shadow: 0px 20px 14px 0px rgb(0 0 0 / 75%);
+        right: -100%;
+    }
+
+    .header .navbar.active{
+        right: 3rem;
+    }
+
+    .header .navbar a{
+        color: var(--black-color);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+}
+
+@media (max-width: 576px){
+    html{
+        font-size: 50%;
+    }
+
+    .header .search-form{
+        width: 30rem;
+
+    }
+}
+/*! Responsive End*/
+
